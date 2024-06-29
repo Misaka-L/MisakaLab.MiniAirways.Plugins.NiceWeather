@@ -1,7 +1,6 @@
 ﻿using System;
 using BepInEx;
 using HarmonyLib;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace MisakaLab.MiniAirways.Plugins.NiceWeather.Entry;
 
@@ -13,14 +12,8 @@ public class Plugin : BaseUnityPlugin
     private const string PluginName = "MisakaLab.MiniAirways.Plugins.NiceWeather.Entry";
     private const string PluginVersion = "0.0.1";
 
-    internal static IServiceProvider ServiceProvider { get; private set; }
-
     private void Awake()
     {
-        var services = new ServiceCollection();
-
-        ServiceProvider = services.BuildServiceProvider();
-
         var harmony = new Harmony(PluginGuid);
         harmony.PatchAll();
     }
