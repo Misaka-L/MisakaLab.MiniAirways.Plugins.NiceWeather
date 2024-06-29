@@ -1,0 +1,6 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Build &amp; Copy Plugins" type="DotNetFolderPublish" factoryName="Publish to folder">
+    <riderPublish configuration="Debug" delete_existing_files="true" platform="Any CPU" runtime="Portable" target_folder="$PROJECT_DIR$/../../Program Files (x86)/Steam/steamapps/common/Mini Airways Playtest/BepInEx/plugins/MisakaLab.MiniAirways.Plugins.NiceWeather" target_framework="netstandard2.1" uuid_high="-6711360337227198730" uuid_low="-7066886238442023844" />
+    <method v="2" />
+  </configuration>
+</component>
