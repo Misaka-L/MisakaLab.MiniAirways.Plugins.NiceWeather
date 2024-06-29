@@ -1,5 +1,4 @@
-﻿using System;
-using BepInEx;
+﻿using BepInEx;
 using HarmonyLib;
 
 namespace MisakaLab.MiniAirways.Plugins.NiceWeather.Entry;

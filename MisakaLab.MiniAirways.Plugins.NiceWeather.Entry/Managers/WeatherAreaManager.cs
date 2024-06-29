@@ -86,19 +86,19 @@ internal class WeatherAreaManager : MonoBehaviour
         var textureBytes = new byte[textureStream.Length];
         textureStream.Read(textureBytes, 0, (int)textureStream.Length);
 
-        var meshMaterial = new Material(Shader.Find("Universal Render Pipeline/2D/Sprite-Lit-Default"));
-
-        var texture = new Texture2D(512, 512);
-        texture.LoadImage(textureBytes);
-
-        meshMaterial.SetTexture(MainTex, texture);
-
-        var meshRenderer = restrictedAreaGameObject.AddComponent<MeshRenderer>();
-        meshRenderer.material = new Material(meshMaterial);
-
-        meshFilter.mesh.RecalculateBounds();
-        meshFilter.mesh.RecalculateNormals();
-        meshFilter.mesh.RecalculateTangents();
+        // var meshMaterial = new Material(Shader.Find("Universal Render Pipeline/2D/Sprite-Lit-Default"));
+        //
+        // var texture = new Texture2D(512, 512);
+        // texture.LoadImage(textureBytes);
+        //
+        // meshMaterial.SetTexture(MainTex, texture);
+        //
+        // var meshRenderer = restrictedAreaGameObject.AddComponent<MeshRenderer>();
+        // meshRenderer.material = new Material(meshMaterial);
+        //
+        // meshFilter.mesh.RecalculateBounds();
+        // meshFilter.mesh.RecalculateNormals();
+        // meshFilter.mesh.RecalculateTangents();
 
         // Scripts
         var weatherArea = restrictedAreaGameObject.AddComponent<WeatherArea>();
