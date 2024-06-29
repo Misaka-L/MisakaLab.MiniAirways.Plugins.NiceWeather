@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using BepInEx.Logging;
 using HarmonyLib;
-using Microsoft.Extensions.DependencyInjection;
 using MisakaLab.MiniAirways.Plugins.NiceWeather.Entry.Managers;
 
 namespace MisakaLab.MiniAirways.Plugins.NiceWeather.Entry.Patches;

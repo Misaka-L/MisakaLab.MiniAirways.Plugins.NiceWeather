@@ -6,7 +6,8 @@ namespace MisakaLab.MiniAirways.Plugins.NiceWeather.Entry.Patches;
 [HarmonyPatch(typeof(Aircraft))]
 internal class AircraftPatch
 {
-    [HarmonyPatch("Start"), HarmonyPrefix]
+    [HarmonyPatch("Start")]
+    [HarmonyPrefix]
     private static void StartPrefix(Aircraft __instance)
     {
         var tailRenderer = __instance.gameObject.AddComponent<TrailRenderer>();

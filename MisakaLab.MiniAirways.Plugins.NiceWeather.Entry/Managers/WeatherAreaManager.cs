@@ -1,29 +1,21 @@
-﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
 using BepInEx.Logging;
 using MisakaLab.MiniAirways.Plugins.NiceWeather.Entry.Behaviours;
 using MisakaLab.MiniAirways.Plugins.NiceWeather.Entry.Utils;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Image = UnityEngine.UI.Image;
 using Logger = BepInEx.Logging.Logger;
-using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
 
 namespace MisakaLab.MiniAirways.Plugins.NiceWeather.Entry.Managers;
 
 internal class WeatherAreaManager : MonoBehaviour
 {
-    private readonly ManualLogSource _logger = Logger.CreateLogSource(typeof(WeatherAreaManager).FullName);
-
     private const int RestrictedAreaLayer = 25;
 
-    private GameObject _currentWeather = null;
-
     private static readonly int MainTex = Shader.PropertyToID("_MainTex");
+    private readonly ManualLogSource _logger = Logger.CreateLogSource(typeof(WeatherAreaManager).FullName);
+
+    private GameObject _currentWeather;
 
     private void Start()
     {
@@ -42,7 +34,10 @@ internal class WeatherAreaManager : MonoBehaviour
         return new Vector2(x, y);
     }
 
-    public void CreateNewWeatherArea() => CreateWeatherArea(GetRandomWeatherPosition(), RandomUtils.GetRandomPolygonPoints());
+    public void CreateNewWeatherArea()
+    {
+        CreateWeatherArea(GetRandomWeatherPosition(), RandomUtils.GetRandomPolygonPoints());
+    }
 
     private GameObject CreateWeatherArea(Vector2 position, Vector2[] points)
     {

@@ -6,12 +6,11 @@ namespace MisakaLab.MiniAirways.Plugins.NiceWeather.Entry.Behaviours;
 
 internal class WeatherArea : MonoBehaviour
 {
+    private bool _hasEnterMap;
     private Vector3 _moveDirection;
     private Vector3 _targetPosition;
 
     private WeatherAreaManager _weatherAreaManager;
-
-    private bool _hasEnterMap;
 
     private void Start()
     {
@@ -22,11 +21,6 @@ internal class WeatherArea : MonoBehaviour
         _targetPosition = new Vector3(Random.Range(-mapHalfSize.x, mapHalfSize.x),
             Random.Range(-mapHalfSize.y, mapHalfSize.y));
         _moveDirection = transform.position - _targetPosition;
-    }
-
-    public void SetWeatherAreaManager(WeatherAreaManager weatherAreaManager)
-    {
-        _weatherAreaManager = weatherAreaManager;
     }
 
     private void FixedUpdate()
@@ -49,5 +43,10 @@ internal class WeatherArea : MonoBehaviour
             _weatherAreaManager.CreateNewWeatherArea();
             Destroy(gameObject);
         }
+    }
+
+    public void SetWeatherAreaManager(WeatherAreaManager weatherAreaManager)
+    {
+        _weatherAreaManager = weatherAreaManager;
     }
 }
